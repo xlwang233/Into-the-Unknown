@@ -1,0 +1,6 @@
+test_type: inductive
+ckpt_dir: /home/xwang/code/next_loc_pred/outputs/fsq_nyc_ctle_mhsa_20241214_170801_4
+data_dir: xxxx
+save_dir: ./outputs/test
+
+

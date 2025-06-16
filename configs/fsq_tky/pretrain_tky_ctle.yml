@@ -1,0 +1,35 @@
+misc:
+  dataset: fsq_tky
+  # 3816 known locations, ranging from 2 to 3817
+  total_loc_num: 6802 # NYC: 3898; TKY: 6802
+  networkName: mhsa  # used only by data loaders
+  previous_day: 7
+  day_selection: default
+  num_workers: 0
+  inductive_pct: 10
+
+model:
+  embed_name: ctle
+  init_param: True
+  embed_size: 128
+  encoding_type: positional
+  ctle_num_layers: 4
+  ctle_num_heads: 8
+  ctle_mask_prop: 0.2
+  ctle_detach: False
+  ctle_objective: mlm
+  ctle_static: False
+  save_static: True
+  hidden_size: 512
+
+dataset:
+  source_root: ./data/
+  save_root: ./pretrained
+
+training:
+  num_epoch: 100
+  device: cuda:0
+  batch_size: 128
+  print_step: 40
+  patience: 5
+  verbose: True

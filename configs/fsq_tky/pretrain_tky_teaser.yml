@@ -1,0 +1,30 @@
+misc:
+  dataset: fsq_tky
+  # NYC: 3816 known locations, ranging from 2 to 3817; TKY: 6800 known locations, plus 0 padding and 1 unknown locations 
+  total_loc_num: 6802 # NYC: 3818; TKY: 6802
+  total_user_num: 1644 # NYC: 536; TKY: 1644
+  inductive_pct: 10
+
+model:
+  embed_name: teaser
+  teaser_num_ne: 5  # (number of unvisited locations)
+  teaser_num_nn: 10  # (number of non-neighbor locations)
+  teaser_indi_context: False
+  teaser_beta: 0.3
+  teaser_week_embed_size: 0
+
+  w2v_window_size: 1
+  skipgram_neg: 5
+  embed_size: 128
+
+dataset:
+  source_root: ./data/
+  save_root: ./pretrained
+
+training:
+  num_epoch: 10
+  batch_size: 128
+  learning_rate: 0.001
+  device: cuda:1
+  print_step: 20
+  verbose: True

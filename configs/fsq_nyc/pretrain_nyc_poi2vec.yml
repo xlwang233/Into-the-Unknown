@@ -1,0 +1,24 @@
+misc:
+  dataset: fsq_nyc
+  total_loc_num: 3818 # NYC: 3818; TKY: 6802
+  inductive_pct: 0  # 0 for conventional setting, 10 for inductive setting
+
+model:
+  embed_name: poi2vec
+  poi2vec_theta: 0.01
+  poi2vec_indi_context: False
+  w2v_window_size: 1
+  skipgram_neg: 5
+  embed_size: 128
+
+dataset:
+  source_root: ./data/
+  save_root: ./pretrained
+
+training:
+  num_epoch: 5
+  device: cuda:0
+  batch_size: 64
+  learning_rate: 0.001
+  print_step: 40
+  verbose: True

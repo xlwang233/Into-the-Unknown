@@ -1,0 +1,74 @@
+config: !!python/object/new:easydict.EasyDict
+  dictitems:
+    data: &id003 !!python/object/new:easydict.EasyDict
+      dictitems:
+        loc_type: lon-lat
+        name: fsq_nyc
+        path: data/nyc_places/nyc_tsmc_locs.csv
+      state:
+        loc_type: lon-lat
+        name: fsq_nyc
+        path: data/nyc_places/nyc_tsmc_locs.csv
+    lightning: &id004 !!python/object/new:easydict.EasyDict
+      dictitems:
+        accelerator: gpu
+        devices: &id001
+        - 0
+        logdir: logs
+        logger: tensorboard
+        results_dir: results
+        save_model: true
+      state:
+        accelerator: gpu
+        devices: *id001
+        logdir: logs
+        logger: tensorboard
+        results_dir: results
+        save_model: true
+    model: &id005 !!python/object/new:easydict.EasyDict
+      dictitems:
+        location_encoder: &id002 !!python/object/new:easydict.EasyDict
+          dictitems:
+            dim_hidden: 256
+            dim_output: 128
+            frequency_num: 32
+            max_lambda: 10
+            min_lambda: 0.01
+            nn_type: fcnet
+            pe_type: grid
+          state:
+            dim_hidden: 256
+            dim_output: 128
+            frequency_num: 32
+            max_lambda: 10
+            min_lambda: 0.01
+            nn_type: fcnet
+            pe_type: grid
+        reconstruct: false
+        text_encoder: sentence_transformers
+      state:
+        location_encoder: *id002
+        reconstruct: false
+        text_encoder: sentence_transformers
+    training: &id006 !!python/object/new:easydict.EasyDict
+      dictitems:
+        batch_size: 128
+        learning_rate: 0.001
+        max_epochs: 100
+        num_workers: 16
+        resume: false
+        seed: 42
+        weight_decay: 0.01
+      state:
+        batch_size: 128
+        learning_rate: 0.001
+        max_epochs: 100
+        num_workers: 16
+        resume: false
+        seed: 42
+        weight_decay: 0.01
+  state:
+    data: *id003
+    lightning: *id004
+    model: *id005
+    training: *id006

@@ -1,0 +1,69 @@
+misc:
+  dataset: fsq_tky
+  # 6800 known locations, plus 0 padding and 1 unknown locations
+  total_loc_num: 6802
+
+  # 1643 users, ranging from 1 to 1643, 0 is reserved for paddding
+  total_user_num: 1644
+
+  # Embedding
+  if_embed_user: True
+  if_embed_poi: False
+  if_embed_time: True
+  if_embed_duration: False
+  if_embed_spatial: False
+  if_embed_roadnet: False
+  loc_embed_method: skipgram
+
+  loc_enc_ckpt_path: pretrained/fsq_tky_skipgram_20250614_xxxxxx  # None if loc_embed_method is vanilla
+  loc_type: lon-lat  # lon-lat or x-y
+  loc_is_static: True
+
+  # how many days in the past we consider
+  previous_day: 7
+  verbose: True
+  debug: False
+  batch_size: 265
+  print_step: 50
+  num_workers: 0
+  day_selection: default
+  inductive_pct: 0  # 0 for conventional setting, 10 for inductive setting
+
+embedding:
+  base_emb_size: 128
+  poi_original_size: 0
+
+model:
+  networkName: mhsa
+  # only for transformer-based architecture
+  num_encoder_layers: 6
+  nhead: 8
+  dim_feedforward: 256
+  fc_dropout: 0.1
+
+optimiser:
+  optimizer: Adam
+  max_epoch: 100
+  lr: 0.001
+  weight_decay: 0.000001
+  # lr: 0.01
+  # for Adam
+  beta1: 0.9
+  beta2: 0.999
+  # for SGD
+  momentum: 0.98
+  # for warmup
+  num_warmup_epochs: 2
+  num_training_epochs: 50
+  # for decay
+  patience: 3
+  lr_step_size: 1
+  lr_gamma: 0.1
+
+dataset:
+  source_root: ./data/
+  save_root: ./outputs_conventional
+  inductive_save_root: ./outputs_inductive
+
+training:
+  device: cuda:0

@@ -1,0 +1,26 @@
+misc:
+  dataset: fsq_tky
+  # NYC: 3816 known locations, ranging from 2 to 3817; TKY: 6800 known locations, plus 0 padding and 1 unknown locations 
+  total_loc_num: 6802 # NYC: 3898; TKY: 6802
+  inductive_pct: 10
+
+model:
+  embed_name: tale
+  w2v_window_size: 1
+  skipgram_neg: 5
+  embed_size: 128
+  tale_slice: 60
+  tale_span: 30
+  tale_indi_context: True
+
+dataset:
+  source_root: ./data/
+  save_root: ./pretrained
+
+training:
+  num_epoch: 10
+  device: cuda:0
+  batch_size: 128
+  learning_rate: 0.001
+  print_step: 40
+  verbose: True

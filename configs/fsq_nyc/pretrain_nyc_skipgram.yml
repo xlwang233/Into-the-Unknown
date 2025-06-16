@@ -1,0 +1,24 @@
+misc:
+  dataset: fsq_nyc
+  # NYC: 3816 known locations, ranging from 2 to 3817; TKY: 6800 known locations, plus 0 padding and 1 unknown locations 
+  total_loc_num: 3818 #: 3818; TKY: 6802
+  inductive_pct: 10  # 0 for conventional setting, 10 for inductive setting
+
+model:
+  embed_name: skipgram
+  w2v_window_size: 1
+  skipgram_neg: 5
+  embed_size: 128
+
+dataset:
+  source_root: ./data/
+  save_root: ./pretrained
+
+training:
+  num_epoch: 10
+  batch_size: 64
+  device: cuda:1
+  learning_rate: 0.001
+  print_step: 40
+  patience: 5
+  verbose: True

@@ -1,0 +1,18 @@
+{
+    "dataset": "fsq_nyc",
+    "device": "cuda:0",
+    "embed_name": "tale",
+    "embed_size": 128,
+    "inductive_pct": 10,
+    "num_epoch": 5,
+    "print_step": 40,
+    "save_root": "./pretrained_new",
+    "skipgram_neg": 5,
+    "source_root": "./data/",
+    "tale_indi_context": true,
+    "tale_slice": 60,
+    "tale_span": 30,
+    "total_loc_num": 3818,
+    "verbose": true,
+    "w2v_window_size": 1
+}
