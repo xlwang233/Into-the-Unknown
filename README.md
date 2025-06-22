@@ -1,5 +1,5 @@
 # Into-the-Unknown
-Welcome! This is the repository for our paper -- **_Into the Unknown: Applying Inductive Spatial-Semantic Location Embeddings for Predicting Individuals’ Mobility Beyond Visited Places_**. 
+Welcome! This is the repository for our paper -- **_Into the Unknown: Applying Inductive Spatial-Semantic Location Embeddings for Predicting Individuals’ Mobility Beyond Visited Places_** (preprint: https://arxiv.org/abs/2506.14070). 
 
 ## Table of Contents
 
@@ -84,3 +84,20 @@ For now, only the experiments on the FSQ-NYC dataset are supported, but we plan 
 This project builds on the excellent work from: [CTLE](https://github.com/Logan-Lin/CTLE), [CaLLiPer](https://github.com/xlwang233/CaLLiPer), and [location-prediction](https://github.com/mie-lab/location-prediction).
 
 We thank the authors for their inspiring work and for promoting open and reproducible research!
+
+## TODOs
+We plan to add more content soon:
+
+:black_square_button: Script for the UMAP visualisation of embeddings. 
+
+:black_square_button: Support for other datasets, e.g., FSQ-TKY, etc.
+
+## Citation
+```bibtex
+@article{wang2025into,
+  title={Into the Unknown: Applying Inductive Spatial-Semantic Location Embeddings for Predicting Individuals' Mobility Beyond Visited Places},
+  author={Wang, Xinglei and Cheng, Tao and Law, Stephen and Zeng, Zichao and Ilyankou, Ilya and Liu, Junyuan and Yin, Lu and Huang, Weiming and Jongwiriyanurak, Natchapon},
+  journal={arXiv preprint arXiv:2506.14070},
+  year={2025}
+}
+```
